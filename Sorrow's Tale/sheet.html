@@ -1,0 +1,254 @@
+<div>
+    <button type="action" name="act_page1" >Character Main</button>
+    <button type="action" name="act_page2" >Journal</button>
+    <button type="action" name="act_page3" >Configuration</button>
+</div>
+<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="page1"  />
+
+<div class="page1">
+
+    <div class='3colrow'>
+        <div class='col div-col1'>
+            <!-- Put the content for the first column here -->
+            &nbsp;<br />
+            <div class="div__char-name">
+                <p class="p__font--helvetica">Character Name:</p> 
+                <input type="text" class="input-text__border--trans" name="attr_character_name" maxlength="28" size="32" autocomplete="off"/>
+            </div>
+            
+            <div class="div__attributes">
+                
+                <!-- strength -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Strength</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_strength" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_strength_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_strength_mod" value="0" />
+                        <input type="number" name="attr_strength_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{strength_mod}"/>
+                    </div>
+                </div>
+                                
+                <!-- constitution -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Constitution</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_constitution" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_constitution_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_constitution_mod" value="0" />
+                        <input type="number" name="attr_constitution_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{constitution_mod}"/>
+                    </div>
+                </div>
+
+                <!-- agility -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Agility</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_agility" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_agility_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_agility_mod" value="0" />
+                        <input type="number" name="attr_agility_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{agility_mod}"/>
+                    </div>
+                </div>
+
+                <!-- perceptive awareness -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name__small">Perc. Awareness</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_peraware" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_peraware_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_peraware_mod" value="0" />
+                        <input type="number" name="attr_peraware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{peraware_mod}"/>
+                    </div>
+                </div>
+
+                <!-- willpower -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Willpower</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_willpower" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_willpower_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_willpower_mod" value="0" />
+                        <input type="number" name="attr_willpower_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{willpower_mod}"/>
+                    </div>
+                </div>
+
+                <!-- Intelligence -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Intelligence</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_intelligence" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_intelligence_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_intelligence_mod" value="0" />
+                        <input type="number" name="attr_intelligence_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{intelligence_mod}"/>
+                    </div>
+                </div>
+
+                <!-- Social Ability -->
+                <div class="div-attrib-box">
+                    <p class="p-attr-name">Social Ability</p>
+                    <div class="div-attrib-box__full">
+                        <input type="number" name="attr_social" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div class="div-attrib-box__curr">
+                        <input type="number" name="attr_social_curr" min="0" max="40" class="input-number__attrib-box" />
+                    </div>
+                    <div>
+                        <p class="p-attr-fullcurr-label">[ Full ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Curr ]</p>
+                    </div>
+                </div>
+                <div style="float:left; margin-left:6px;">
+                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    <div class="div-attrib-box__mod">
+                        <input type="hidden" name="attr_social_mod" value="0" />
+                        <input type="number" name="attr_social_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{social_mod}"/>
+                        <p class="p-attr-fullcurr-label" style="margin-top: 3px; ">[ Mod ]</p>
+                    </div>
+                    
+                </div>
+            </div>     
+        </div>
+        <div class='col'>
+            <!-- Second column -->
+        </div>
+        <div class='col'>
+            <!-- Third column -->
+        </div>
+    </div>   
+</div>
+
+<div class="page2">
+    <h2>Journal/Notes</h2>
+    <span>Journal/Notes Stuff Goes here</span> 
+</div>
+
+<div class="page3">
+    <h2>Config/Settings</h2>
+    <span>Sheet Config/Settings goes here</span> 
+</div>
+
+<div style="display: none;">
+    <input type="hidden" name="attr_rollatrib_str" 
+    value="&{template:sorrowstale-attrib} {{title=Strength Check}} {{subtitle=Subtitle which is optional }} {{color=}} {{Normal row= The sheet can have any number of these sections. Everything to the left of the equal sign is bolded.}} {{desc= If the left side contain exactly "desc", then the equal sign is removed and any content is spread to the with of the full template. Inline roll: [[d20+3]] }}" 
+    />
+</div>
+
+
+<script type="text/worker">
+    function calculateMod(value) {
+        if(value == 40) return 12; 
+        else if (value == 39) return 11;
+        else if (value >= 36 && value <= 38) return 10;
+        else if (value >= 33 && value <= 35) return 9;
+        else if (value >= 30 && value <= 32) return 8;
+        else if (value >= 27 && value <= 29) return 7;
+        else if (value >= 24 && value <= 26) return 6;
+        else if (value >= 21 && value <= 23) return 5;
+        else if (value >= 18 && value <= 20) return 4;
+        else if (value >= 15 && value <= 17) return 3;
+        else if (value >= 12 && value <= 14) return 2;
+        else if (value >= 9 && value <= 11) return 1;
+        else if (value == 8) return 0;
+        else if (value == 7) return -1;
+        else if (value == 6) return -2;
+        else if (value == 5) return -4;
+        else if (value == 4) return -6;
+        else if (value == 3) return -8;
+        else if (value == 2) return -10;
+        else if (value == 1) return -12;
+        else if (value == 0) return -99;
+        else return -77;      
+    }
+
+    // handle 
+    const buttonlist = ["page1","page2","page3"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+    
+    on("change:strength change:strength_curr change:constitution change:constitution_curr change:agility change:agility_curr " +
+        "change:peraware change:peraware_curr change:willpower change:willpower_curr change:intelligence change:intelligence_curr " + 
+        "change:social change:social_curr", function(eventInfo) {
+        const attrib = eventInfo.sourceAttribute;
+        getAttrs([attrib], function(values) {
+            const attribVal = values[attrib];
+            if (attribVal < 0){
+                setAttrs({ [`${attrib}`]: 0}); 
+            }
+            else if (attribVal > 40){
+                setAttrs({ [`${attrib}`]: 40});
+            }
+            else if (attrib.endsWith("_curr")) {
+                setAttrs({ [`${attrib.slice(0, (attrib.length-5))}_mod`]: calculateMod(attribVal) });
+            }
+        });
+    });   
+ </script>
+
+ <rolltemplate class="sheet-rolltemplate-sorrowstale">
+    <div class="sheet-container.sheet-color-{{color}}">
+        ABC
+    </div>       
+ </rolltemplate>
+
+ <rolltemplate class="sheet-rolltemplate-sorrowstale-sample">
+    <div class="sheet-container sheet-color-{{color}}">
+      <div class="sheet-header">
+        {{#title}}<div class="sheet-title">{{title}} </div>{{/title}}
+        {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+      </div>
+      <div class="sheet-content">
+        {{#allprops() title subtitle desc color}}
+        <div class="sheet-key">{{key}}</div>
+        <div class="sheet-value">{{value}}</div>
+        {{/allprops() title subtitle desc color}}
+        {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+      </div>
+    </div>
+  </rolltemplate> 

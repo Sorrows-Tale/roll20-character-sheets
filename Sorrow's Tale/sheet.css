@@ -1,0 +1,267 @@
+/*Configure the tab buttons*/
+.page1,
+.page2,
+.page3 {
+    display: none;
+}
+
+/* show the selected tab */
+.tabstoggle[value="page1"] ~ div.page1,
+.tabstoggle[value="page2"] ~ div.page2,
+.tabstoggle[value="page3"] ~ div.page3 {
+    display: block;
+}
+
+.div-col1 {
+  padding: 01px;
+}
+
+.div__char-name {
+  border-radius: 15px;
+  background: #D3D3D3;
+  padding: 10px;
+  width: 220px;
+  height: 50 px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  padding-right: 0px;
+}
+
+.div__attributes {
+  border-radius: 15px;
+  background: #D3D3D3;
+  padding: 10px 1px 5px 8px;
+  width: 220px;
+  height: 505px;
+  margin-bottom: 5px;
+}
+
+.div-attrib-box {
+  border-radius: 15px 15px 0px 0px;
+  background: #FFFFFF;
+  border-style: double;
+  border-color: #808080;
+  padding: 0px;
+  width: 130px;
+  height: 60px;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  float: left;
+}
+
+
+.div-attrib-box__full {
+    background: #FFFFFF;
+    border-style: solid solid none none;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 0px;
+    width: 64px;
+    height: 32px;
+    margin-bottom: 0px;
+    float: left;
+}
+  
+.div-attrib-box__curr {
+    background: #FFFFFF;
+    border-style: solid none none none;
+    border-color: #808080;
+    border-width: 2px;
+    padding: 0px;
+    width: 64px;
+    height: 32px;
+    margin-bottom: 0px;
+    float: left;
+}
+  
+.div-attrib-box__mod {
+    border-radius: 15px 15px 15px 15px;
+    background: #FFFFFF;
+    border-style: double;
+    border-color: #808080;
+    padding: 0px;
+    width: 66px;
+    height: 32px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    float: left;
+}
+ 
+  
+
+.input-number__attrib-box {
+    box-sizing: content-box !important;
+    border-style: none;
+    margin-left: 14px; 
+    margin-top: 4px !important;
+    font-family: Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 42px !important;
+    height: 18px !important;
+}
+
+
+.input-number__attrib-box:focus {
+    outline: none;
+}    
+
+.input-number__mod-box,
+.input-number__mod-box:disabled {
+    background: #FFFFFF;
+    box-sizing: content-box !important;
+    border-style: none;
+    margin-left: 12px; 
+    margin-top: 4px !important;
+    font-family: Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    width: 40px !important;
+    height: 18px !important;
+    outline: none;
+    text-align: center;
+}
+
+
+
+.input-text__border--trans {
+    box-sizing: content-box;
+    border: 0px;
+    -webkit-transition: 0.5s;
+    outline: 2px solid #808080;
+    font-weight: bold;
+}
+
+.input-text__border--trans:focus {
+    box-sizing: content-box;
+    outline: 2px solid #000000;
+    font-weight: bold;
+}
+
+
+.p__font--helvetica {
+    font-family: Helvetica, Verdana, sans-serif;
+    margin: 1px;
+    padding: 0px;
+    font-weight: bold;  
+}
+
+.p__font-size__12 {
+    font-size: 11px;
+    line-height: 1.3em;
+}
+
+.p__font-size__16 {
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+
+.p-attr-name {
+    font-family: Helvetica, Verdana, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 4px 2px 4px 2px;
+}
+.p-attr-name__small {
+    font-family: Helvetica, Verdana, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 4px 1px 4px 1px;
+}
+
+.p-attr-fullcurr-label {
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 14px;
+    margin-left:10px; 
+    font-weight:bold;
+    margin-top: 40px;
+}
+/*-----------------------*/
+/* Roll Template Section */
+/*-----------------------*/
+.sheet-rolltemplate-sorrowstale {
+    margin-left: -37px;
+  }
+  
+
+
+
+
+  .withoutavatars .sheet-rolltemplate-sorrowstale {
+    margin-left: -7px;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-container {
+    border: 3px solid black;
+    border-radius: 3px;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    text-align: left;
+    text-transform: capitalize;
+    padding: 5px;
+    border-bottom: 2px solid black;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  
+  
+  .sheet-rolltemplate-sorrowstale .sheet-subtitle {
+    font-size: 0.9em;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-container {
+    --header-bg-color: #a83521;
+    --header-text-color: #FFF;
+  }
+  .sheet-rolltemplate-sorrowstale .sheet-container.sheet-color-green {
+    --header-bg-color: #008000;
+  }
+  .sheet-rolltemplate-sorrowstale .sheet-container.sheet-color-black {
+    --header-bg-color: #000;
+  }
+  .sheet-rolltemplate-sorrowstale .sheet-container.sheet-color-white {
+    --header-bg-color: #FFF;
+    --header-text-color: #000;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-content {
+    display: grid;
+    background: #FFF;
+    grid-template-columns: auto auto;
+    line-height: 1.4em;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-content > div {
+    padding: 5px;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-content :nth-child(4n+3),
+  .sheet-rolltemplate-sorrowstale .sheet-content :nth-child(4n) {
+    background: #EEE;
+  }
+  
+  .sheet-rolltemplate-sorrowstale .sheet-desc {
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+  }
