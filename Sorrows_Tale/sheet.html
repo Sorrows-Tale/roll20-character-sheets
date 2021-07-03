@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__str}" name="roll_strength" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_strength_mod" value="0" />
                         <input type="number" name="attr_strength_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{strength_mod}"/>
@@ -170,8 +170,8 @@
 </div>
 
 <div style="display: none;">
-    <input type="hidden" name="attr_rollatrib_str" 
-    value="&{template:sorrowstale-attrib} {{title=Strength Check}} {{subtitle=Subtitle which is optional }} {{color=}} {{Normal row= The sheet can have any number of these sections. Everything to the left of the equal sign is bolded.}} {{desc= If the left side contain exactly "desc", then the equal sign is removed and any content is spread to the with of the full template. Inline roll: [[d20+3]] }}" 
+    <input type="hidden" name="attr_roll-ability__str" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{strength_mod}]]}}{{charName=@{character_name}}}{{ability=Strength}}{{mod=@{strength_mod}}}" 
     />
 </div>
 
@@ -233,7 +233,17 @@
 
  <rolltemplate class="sheet-rolltemplate-sorrowstale-ability">
     <div class="sheet-container">
-      ABC
+        <div class="sheet-ability-roll">
+            <p style="line-height: 3;">&nbsp;</p>
+            {{#check}}<span>{{check}}</span><br />{{/check}}
+            {{#rollWasCrit() check}} <span>[ Critical Success ]</span>{{/rollWasCrit() check}}
+            {{#rollWasFumble() check}}<span>[ Fail / Fumble ]</span>{{/rollWasFumble() check}}
+         </div>
+        <div class="sheet-ability-roll-footer">
+            {{#charName}}<span>{{charName}}</span>{{/charName}}<br />
+            {{#ability}}<span class="sheet-ability-font">{{ability}} </span>{{/ability}}
+            {{#mod}}<span class="sheet-ability-font"> ({{mod}}) </span>{{/mod}}
+        </div>
     </div>       
  </rolltemplate>
 

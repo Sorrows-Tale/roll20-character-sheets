@@ -183,19 +183,64 @@
     font-weight:bold;
     margin-top: 40px;
 }
-/*-----------------------*/
-/* Roll Template Section */
-/*-----------------------*/
+/*------------------------------------------*/
+/* Roll Template Section                    */
+/* sheet-rolltemplate-sorrowstale-ability   */
+/*------------------------------------------*/
 .sheet-rolltemplate-sorrowstale-ability {
-    margin-left: -37px;
+    margin-left: -30px;
 }
   
 .sheet-rolltemplate-sorrowstale-ability .sheet-container {
-  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrow%27%20Tale/rt_attrib.png123)";
+  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/rt_attrib.png");
   background-size: 245px 165px;
   height: 165px;
   width: 245px;
 }
+
+.sheet-rolltemplate-sorrowstale-ability .sheet-ability-roll{
+  width: 245px;
+  height: 90px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-sorrowstale-ability .sheet-ability-roll-footer{
+  width: 245px;
+  height: 75px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-sorrowstale-ability .sheet-ability-font{
+  font-size: 1.75em;
+  font-weight: bold;
+  font-style: italic;
+  height: 30px;
+  display: inline-block;
+  padding-top: 13px;
+}
+
+
+.sheet-rolltemplate-sorrowstale-ability .inlinerollresult  {
+  background-color: #E6E7E8;
+  border: none;
+  font-size: 2.5em;
+}
+
+.sheet-rolltemplate-sorrowstale-ability .inlinerollresult.fullcrit {
+  color: #3FB315;
+  border: none;
+}
+
+.sheet-rolltemplate-sorrowstale-ability .inlinerollresult.fullfail {
+  color: #B31515;
+  border: none;
+}
+
+
+
+
 
 
   .withoutavatars .sheet-rolltemplate-sorrowstale {
