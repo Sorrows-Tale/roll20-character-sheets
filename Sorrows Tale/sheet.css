@@ -186,12 +186,12 @@
 /*-----------------------*/
 /* Roll Template Section */
 /*-----------------------*/
-.sheet-rolltemplate-sorrowstale {
+.sheet-rolltemplate-sorrowstale-ability {
     margin-left: -37px;
 }
   
-.sheet-rolltemplate-sorrowstale .sheet-container {
-  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrow's%20Tale/rt_attrib.png");
+.sheet-rolltemplate-sorrowstale-ability .sheet-container {
+  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrow%27%20Tale/rt_attrib.png123)";
   background-size: 245px 165px;
   height: 165px;
   width: 245px;
