@@ -188,17 +188,18 @@
 /*-----------------------*/
 .sheet-rolltemplate-sorrowstale {
     margin-left: -37px;
-  }
+}
   
-
-
+.sheet-rolltemplate-sorrowstale .sheet-container {
+  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrow's%20Tale/rt_attrib.png");
+}
 
 
   .withoutavatars .sheet-rolltemplate-sorrowstale {
     margin-left: -7px;
   }
   
-  .sheet-rolltemplate-sorrowstale .sheet-container {
+  .sheet-rolltemplate-sorrowstale1 .sheet-container {
     border: 3px solid black;
     border-radius: 3px;
   }
