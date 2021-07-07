@@ -1,3 +1,41 @@
+
+.header-container {
+  width: 1000px;
+  height: 100px;
+  border: solid;
+  border-width: 2px;
+}
+
+.img-logo-head {
+  width: 220px;
+  height: 81px;
+}
+
+.div-bi-value-pill-box {
+  border-radius: 15px 15px 15px 15px;
+  background: #FFFFFF;
+  border-style: double;
+  border-color: #808080;
+  padding: -1px;
+  width: 100px;
+  height: 32px;
+  margin-top: -1px;
+  margin-bottom: 0px;
+  float: left;
+}
+
+.div__left {
+  float:left;
+}
+
+.div__middle {
+  float:left;
+}
+
+.div__right {
+  float: right;
+}
+
 /*Configure the tab buttons*/
 .page1,
 .page2,
@@ -12,8 +50,13 @@
     display: block;
 }
 
+
+
+
+
 .div-col1 {
   padding: 01px;
+  clear:both;
 }
 
 .div__char-name {
@@ -25,6 +68,7 @@
   margin-bottom: 5px;
   padding-top: 3px;
   padding-right: 0px;
+  float: left;
 }
 
 .div__attributes {
@@ -34,6 +78,7 @@
   width: 220px;
   height: 505px;
   margin-bottom: 5px;
+
 }
 
 .div-attrib-box {
