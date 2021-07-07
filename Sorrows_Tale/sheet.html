@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__con}" name="roll_constitution"></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_constitution_mod" value="0" />
                         <input type="number" name="attr_constitution_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{constitution_mod}"/>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__agi}" name="roll_agility" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_agility_mod" value="0" />
                         <input type="number" name="attr_agility_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{agility_mod}"/>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__per}" name="roll_peraware"></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_peraware_mod" value="0" />
                         <input type="number" name="attr_peraware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{peraware_mod}"/>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__wil}" name="roll_willpower" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_willpower_mod" value="0" />
                         <input type="number" name="attr_willpower_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{willpower_mod}"/>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__int}" name="roll_intelligence" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_intelligence_mod" value="0" />
                         <input type="number" name="attr_intelligence_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{intelligence_mod}"/>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="/roll [Strength Check:] 1d20 + @{strength_mod}" name="roll_strength" ></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__soc}" name="roll_Social" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_social_mod" value="0" />
                         <input type="number" name="attr_social_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{social_mod}"/>
@@ -171,8 +171,19 @@
 
 <div style="display: none;">
     <input type="hidden" name="attr_roll-ability__str" 
-    value="&{template:sorrowstale-ability}{{check=[[1d20+@{strength_mod}]]}}{{charName=@{character_name}}}{{ability=Strength}}{{mod=@{strength_mod}}}" 
-    />
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{strength_mod}]]}}{{charName=@{character_name}}}{{ability=Strength}}{{mod=@{strength_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__con" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{constitution_mod}]]}}{{charName=@{character_name}}}{{ability=Constitution}}{{mod=@{constitution_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__agi" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{agility_mod}]]}}{{charName=@{character_name}}}{{ability=Agility}}{{mod=@{agility_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__per" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{peraware_mod}]]}}{{charName=@{character_name}}}{{ability=Perc. Awareness}}{{mod=@{peraware_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__wil" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{willpower_mod}]]}}{{charName=@{character_name}}}{{ability=Willpower}}{{mod=@{willpower_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__int" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{intelligence_mod}]]}}{{charName=@{character_name}}}{{ability=Intelligence}}{{mod=@{intelligence_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__soc" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{social_mod}]]}}{{charName=@{character_name}}}{{ability=Social Ability}}{{mod=@{social_mod}}}"/>
 </div>
 
 
@@ -234,13 +245,13 @@
  <rolltemplate class="sheet-rolltemplate-sorrowstale-ability">
     <div class="sheet-container">
         <div class="sheet-ability-roll">
-            <p style="line-height: 3;">&nbsp;</p>
+            <p style="line-height: 1.8;">&nbsp;</p>
+            {{#charName}}<span style="line-height: 2.3;">{{charName}}</span>{{/charName}} Rolls:<br />
             {{#check}}<span>{{check}}</span><br />{{/check}}
             {{#rollWasCrit() check}} <span>[ Critical Success ]</span>{{/rollWasCrit() check}}
             {{#rollWasFumble() check}}<span>[ Fail / Fumble ]</span>{{/rollWasFumble() check}}
          </div>
         <div class="sheet-ability-roll-footer">
-            {{#charName}}<span>{{charName}}</span>{{/charName}}<br />
             {{#ability}}<span class="sheet-ability-font">{{ability}} </span>{{/ability}}
             {{#mod}}<span class="sheet-ability-font"> ({{mod}}) </span>{{/mod}}
         </div>
