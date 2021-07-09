@@ -1,3 +1,6 @@
+<!-- ------------------------ -->
+<!-- Start of: Header Section -->
+<!-- ------------------------ -->
 <div class="header-container">
     <div class="div__left">
         <img class="img-logo-head" src="https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/st_logo1.png" />
@@ -16,31 +19,39 @@
         <div class="div__left">
             <p class="p__font--helvetica">&nbsp;&nbsp;&nbsp;Health:</p>
             <div class="div-bi-value-pill-box">
-                <input type="number" name="attr_health_max" min="0" max="999" class="input-number__counter-max" />
-                <input type="number" name="attr_health" min="-99" max="999" class="input-number__counter-max" style="border-left: solid 2px;"/>
+                <input type="number" name="attr_health_max" min="0" max="999" class="input-number__counter" />
+                <input type="number" name="attr_health" min="-99" max="999" class="input-number__counter" style="border-left: solid 2px;"/>
                 <p class="p-fullremain-label">&nbsp;&nbsp;&nbsp;Full&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current</p>
             </div>
         </div>    
         <div class="div__left">
             <p class="p__font--helvetica">&nbsp;&nbsp;&nbsp;Will:</p>
             <div class="div-bi-value-pill-box">
-                <input type="number" name="attr_will_max" min="0" max="999" class="input-number__counter-max" />
-                <input type="number" name="attr_will" min="-99" max="999" class="input-number__counter-max" style="border-left: solid 2px;"/>
+                <input type="number" name="attr_will_max" min="0" max="999" class="input-number__counter" />
+                <input type="number" name="attr_will" min="-99" max="999" class="input-number__counter" style="border-left: solid 2px;"/>
                 <p class="p-fullremain-label">&nbsp;&nbsp;&nbsp;Full&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current</p>
             </div>
         </div>
         <div class="div__left">
             <p class="p__font--helvetica">&nbsp;&nbsp;&nbsp;Luck:</p>
             <div class="div-bi-value-pill-box">
-                <input type="number" name="attr_luck_max" min="0" max="10" value=10 class="input-number__counter-max" />
-                <input type="number" name="attr_luck" min="-99" max="999" class="input-number__counter-max" style="border-left: solid 2px;"/>
+                <input type="number" name="attr_luck_max" min="0" max="10" value=10 class="input-number__counter" />
+                <input type="number" name="attr_luck" min="-99" max="999" class="input-number__counter" style="border-left: solid 2px;"/>
                 <p class="p-fullremain-label">&nbsp;&nbsp;&nbsp;Max&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current</p>
             </div>
+        </div>
+        <div class="div-major-wound">
+            <input type="checkbox" value="1" name="attr_major_wound" style="float:left;" />
+            <p class="p-major-wound">Major Wound</p> 
         </div>        
     </div>
 </div>
 <input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="page1"  />
+<!-- End of: Header Section -->
 
+<!-- ---------------- -->
+<!-- Start of: Page 1 -->
+<!-- ---------------- -->
 <div class="page1">
 
     <div class='3colrow'>
@@ -189,6 +200,8 @@
         </div>
     </div>   
 </div>
+<!-- End of: Page 1 -->
+
 
 <div class="page2">
     <h2>Journal/Notes</h2>
