@@ -1,3 +1,6 @@
+/*------------------------------------------*/
+/* Character Sheet Header Section           */
+/*------------------------------------------*/
 
 .header-container {
   width: 840px;
@@ -107,14 +110,6 @@
   float:left;
 }
 
-.div__middle {
-  float:left;
-}
-
-.div__right {
-  float: right;
-}
-
 /*Configure the tab buttons*/
 .page1,
 .page2,
@@ -129,10 +124,24 @@
     display: block;
 }
 
-.div-col1 {
-  padding: 01px;
-  clear:both;
+/*------------------------------------------*/
+/* Character Sheet Page 1 Section           */
+/*------------------------------------------*/
+
+.div-p1 {
+  width: 840px;
+  height:auto;
 }
+
+
+/* page 1 column 1 section */
+
+.div-p1col1 {
+  padding: 01px;
+  width: 225px;
+  clear:left;
+  float:left;
+ }
 
 .div__attributes {
   border-radius: 15px;
@@ -273,6 +282,7 @@
     padding: 0px;
     margin: 4px 2px 4px 2px;
 }
+
 .p-attr-name__small {
     font-family: Helvetica, Verdana, sans-serif;
     text-align: center;
@@ -290,6 +300,28 @@
     font-weight:bold;
     margin-top: 40px;
 }
+
+/* page 1 column 2 section */
+
+.div-p1col2 {
+  border-radius: 15px;
+  background: #D3D3D3;
+  padding: 01px;
+  width: 598px;
+  float:left;
+  margin-left: 8px;
+ }
+
+
+.div__defence-armor {
+  border-radius: 15px;
+  background: #FFFFFF;
+  width: 588px;
+  height: 205px;
+  margin: 5px;
+  float:left;
+}
+
 
 
 
