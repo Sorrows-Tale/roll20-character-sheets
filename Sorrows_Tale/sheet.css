@@ -313,16 +313,22 @@
  }
 
 
-.div__defence-armor {
+.div__defence {
   border-radius: 15px;
+  border-style: groove;
   background: #FFFFFF;
-  width: 588px;
+  width: 240px;
   height: 205px;
   margin: 5px;
   float:left;
 }
 
-
+.img-def-ribbon {
+  width: 224px;
+  height: 41px;
+  margin: 3px 5px 2px 7px;
+  clear:both;
+}
 
 
 
