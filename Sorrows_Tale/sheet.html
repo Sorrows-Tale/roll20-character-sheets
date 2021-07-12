@@ -204,7 +204,7 @@
                     </p>
                     <p class="p__font--helvetica p__font-size__16 div__left">&nbsp;+&nbsp;</p>
                     <p class="p-box-text div__left" style="margin-top: -5px;">
-                        <input type="number" name="attr_defense-talent-mod" min="0" max="12" class="input-defense-talent-mod" value="0" /><br />
+                        <input type="number" name="attr_defense_talent_mod" min="0" max="12" class="input-defense_talent_mod" value="0" /><br />
                         Talent<br />&nbsp;&nbsp;Mod
                     </p>    
                     <p class="p__font--helvetica p__font-size__16 div__left">&nbsp;=&nbsp;</p>
@@ -212,7 +212,7 @@
                 </div>
                 <div class="div-defense-text" style="margin-top: 25px;">
                     <div class="div-def-rate-disp">
-                        <input type="hidden" name="attr_defense_rating" />
+                        <input type="hidden" name="attr_defense_rating" value="0"/>
                         <input type="number" name="attr_defense_rating_disp" min="-99" max="99" class="input-number__def-box" disabled="true" value="@{defense_rating}"/><br />
                         <p class="p-box-text div__left div__left" style="padding-top: 16px;">Defense<br />&nbsp;Rating</p>
                     </div>
@@ -313,15 +313,12 @@
         });
     });
 
-</script>
-
-<script type="text/worker">
-    on("change:agility_mod change:defense-talent-mod", function() {
-        getAttrs(["agility_mod", "defense-talent-mod"], function(values) {
+    on("change:agility_mod change:defense_talent_mod", function() {
+        getAttrs(["agility_mod", "defense_talent_mod"], function(values) {
             let agm = parseInt(values.agility_mod)||0;
-            let dtm = parseInt(values.defense-talent-mod)||0;
+            let dtm = parseInt(values.defense_talent_mod)||0;
             let dr = (10+agm+dtm);
-            setAttrs({"defense_rating":dr});
+            setAttrs({defense_rating:dr});
         });
     });
 </script>
