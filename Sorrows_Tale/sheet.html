@@ -205,22 +205,28 @@
                     </p>
                     <p class="p__font--helvetica p__font-size__16 div__left" >&nbsp;+&nbsp;</p>
                     <p class="p-box-text div__left" style="padding-top: 3px;">
-                        Talent<br />&nbsp;&nbsp;Mod
+                        Talent&nbsp;<br />&nbsp;&nbsp;Mod
+                    </p>
+                    <p class="p-box-text div__left" style="margin-top: -4px;">
+                        <input type="number" name="attr_defense_talent_mod" min="0" max="12" class="input-defense-talent-mod" value="0" /><br />
                     </p>    
                 </div>
-                <div class="div-defense-text" style="margin-top: 25px;">
-                    <div class="div-def-rate-disp">
-                        <input type="number" name="attr_defense_talent_mod" min="0" max="12" class="input-defense-talent-mod" value="0" /><br />
-                        <p class="p-box-text div__left div__left" style="padding-top: 16px;">Talent<br />&nbsp;&nbsp;Mod</p>
-                        
-                    </div>
+                <div class="div-defense-2row">
                     <div class="div-def-rate-disp">
                         <input type="hidden" name="attr_defense_rating" value="0"/>
                         <input type="text" name="attr_defense_rating_disp" min="-99" max="99" class="input-def-box" disabled="true" value="@{defense_rating}"/><br />
                         <p class="p-box-text div__left div__left" style="padding-top: 16px;">Defense<br />&nbsp;Rating</p>
                     </div>
+                    <p class="p__font--helvetica p__font-size__16 div__left" style="padding-top: 13px;">&nbsp;&nbsp;+&nbsp;&nbsp;</p>
                     <div class="div-def-shield-rating">
-                        &nbsp;
+                        <input type="number" name="attr_shield_rating" min="0" max="9" class="input-shield-rating" value="0" /><br />
+                        <p class="p-box-text div__left div__left" style="padding: 12px 0px 0px 7px;">Shield<br />Rating</p>
+                    </div>
+                    <p class="p__font--helvetica p__font-size__16 div__left" style="padding-top: 13px;">&nbsp;&nbsp;=&nbsp;&nbsp;</p>
+                    <div class="div-def-rate-disp">
+                        <input type="hidden" name="attr_defense_rating" value="0"/>
+                        <input type="text" name="attr_defense_rating_disp" min="-99" max="99" class="input-def-box" disabled="true" value="@{defense_rating}"/><br />
+                        <p class="p-box-text div__left div__left" style="padding-top: 16px;">Def.Rate.<br />w/ Shield</p>
                     </div>
                 </div>     
             </div>
