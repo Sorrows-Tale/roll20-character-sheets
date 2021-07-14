@@ -196,10 +196,9 @@
             <!-- Page 1 column 2 contents -->
             <div class="div__defense">
                 <img class="img-def-ribbon" src="https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/def_ribbon.png" /><br />
-                <div class="div-defense-text">
+                <div class="div-defense-row1">
                     <p class="p-box-text div__left div__left" style="padding-top: 3px;">Defense&nbsp;<br />&nbsp;Rating</p>
-                    <p class="p__font--helvetica p__font-size__16 div__left">&nbsp;=&nbsp;</p>
-                    <p class="p__font--helvetica p__font-size__16 div__left">10 +&nbsp;</p>
+                    <p class="p__font--helvetica p__font-size__16 div__left">&nbsp;=&nbsp;&nbsp;10 +&nbsp;</p>
                     <p class="p-box-text div__left" style="padding-top: 3px;">
                         Agility<br />&nbsp;Mod
                     </p>
@@ -211,22 +210,22 @@
                         <input type="number" name="attr_defense_talent_mod" min="0" max="12" class="input-defense-talent-mod" value="0" /><br />
                     </p>    
                 </div>
-                <div class="div-defense-2row">
+                <div class="div-defense-row2">
                     <div class="div-def-rate-disp">
                         <input type="hidden" name="attr_defense_rating" value="0"/>
                         <input type="text" name="attr_defense_rating_disp" min="-99" max="99" class="input-def-box" disabled="true" value="@{defense_rating}"/><br />
-                        <p class="p-box-text div__left div__left" style="padding-top: 16px;">Defense<br />&nbsp;Rating</p>
+                        <p class="p-box-text div__left div__left" style="padding-top: 13px;">Defense<br />&nbsp;Rating</p>
                     </div>
                     <p class="p__font--helvetica p__font-size__16 div__left" style="padding-top: 13px;">&nbsp;&nbsp;+&nbsp;&nbsp;</p>
                     <div class="div-def-shield-rating">
                         <input type="number" name="attr_shield_rating" min="0" max="9" class="input-shield-rating" value="0" /><br />
-                        <p class="p-box-text div__left div__left" style="padding: 12px 0px 0px 7px;">Shield<br />Rating</p>
+                        <p class="p-box-text div__left div__left" style="padding: 9px 0px 0px 7px;">Shield<br />Rating</p>
                     </div>
                     <p class="p__font--helvetica p__font-size__16 div__left" style="padding-top: 13px;">&nbsp;&nbsp;=&nbsp;&nbsp;</p>
                     <div class="div-def-rate-disp">
-                        <input type="hidden" name="attr_defense_rating" value="0"/>
-                        <input type="text" name="attr_defense_rating_disp" min="-99" max="99" class="input-def-box" disabled="true" value="@{defense_rating}"/><br />
-                        <p class="p-box-text div__left div__left" style="padding-top: 16px;">Def.Rate.<br />w/ Shield</p>
+                        <input type="hidden" name="attr_with_shield_rating" value="0"/>
+                        <input type="text" name="attr_with_shield_rating_disp" min="-99" max="99" class="input-def-box" disabled="true" value="@{with_shield_rating}"/><br />
+                        <p class="p-box-text div__left div__left" style="padding-top: 13px; width:54px; margin-left: -8px;">Def. Rating<br />with Shield</p>
                     </div>
                 </div>     
             </div>
@@ -325,12 +324,14 @@
         });
     });
 
-    on("change:agility_mod change:defense_talent_mod", function() {
-        getAttrs(["agility_mod", "defense_talent_mod"], function(values) {
+    on("change:agility_mod change:defense_talent_mod change:shield_rating", function() {
+        getAttrs(["agility_mod", "defense_talent_mod", "shield_rating"], function(values) {
             let agm = parseInt(values.agility_mod)||0;
             let dtm = parseInt(values.defense_talent_mod)||0;
+            let sr = parseInt(values.shield_rating)||0;
             let dr = (10+agm+dtm);
-            setAttrs({defense_rating:dr});
+            let wsr = (dr+sr);
+            setAttrs({defense_rating:dr, with_shield_rating:wsr});
         });
     });
 </script>

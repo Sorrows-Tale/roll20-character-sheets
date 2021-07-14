@@ -262,10 +262,16 @@
     font-weight: bold;  
 }
 
-.p__font-size__12 {
+.p__font-size__11 {
     font-size: 11px;
     line-height: 1.3em;
 }
+
+.p__font-size__14 {
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
 
 .p__font-size__16 {
     font-size: 16px;
@@ -323,9 +329,11 @@
   float:left;
 }
 
-.div-defense-text {
-  width: 230px;
-  padding: 10px 3px 3px 6px;
+.div-defense-row1 {
+  width: 235px;
+  background-color: #EFEEEA;
+  padding: 10px 0px 10px 5px;
+  margin-top: 4px;
   clear:both;
   display:inline-block;
   vertical-align: middle;
@@ -352,16 +360,21 @@
   font-size: 13px;
   font-weight: bold;
   margin-top: -5px;
+  padding-right: 0px;
+  padding-left:0px;
+  text-align: center;
+  width:40px !important;
+
 }
 
-.div-defense-2row {
+.div-defense-row2 {
   width: 230px;
-  padding: 10px 3px 3px 6px;
+  padding: 5px 3px 3px 6px;
   clear:both;
   display:inline-block;
   vertical-align: middle;
   margin-top: 0px;
-  margin-left: 12px;
+  margin-left: 14px;
 }
 
 .input-defense-talent-mod:focus {
