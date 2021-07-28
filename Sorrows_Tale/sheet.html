@@ -41,8 +41,10 @@
             </div>
         </div>
         <div class="div-major-wound">
-            <input type="checkbox" value="1" name="attr_major_wound" style="float:left;" />
-            <p class="p-major-wound">Major Wound</p> 
+            <input type="checkbox" value="1" class="input-cb-maj-wound" name="attr_major_wound" style="float:left;" />
+            <input type="hidden" name="attr_major_wound" value="@{major_wound}" class="input-ctr-maj-wound-text-display"/>
+            <p class="p-major-wound">Major Wound</p>
+            <input type="text" class="input-text-maj-wound-desc" name="attr_maj_wound_desc" />
         </div>        
     </div>
 </div>
@@ -74,7 +76,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__str}" name="roll_strength" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_strength_mod" value="0" />
-                        <input type="number" name="attr_strength_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{strength_mod}"/>
+                        <input type="text" name="attr_strength_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{strength_mod}"/>
                     </div>
                 </div>
                                 
@@ -92,7 +94,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__con}" name="roll_constitution"></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_constitution_mod" value="0" />
-                        <input type="number" name="attr_constitution_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{constitution_mod}"/>
+                        <input type="text" name="attr_constitution_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{constitution_mod}"/>
                     </div>
                 </div>
 
@@ -110,7 +112,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__agi}" name="roll_agility" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_agility_mod" value="0" />
-                        <input type="number" name="attr_agility_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{agility_mod}"/>
+                        <input type="text" name="attr_agility_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{agility_mod}"/>
                     </div>
                 </div>
 
@@ -128,7 +130,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__per}" name="roll_peraware"></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_peraware_mod" value="0" />
-                        <input type="number" name="attr_peraware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{peraware_mod}"/>
+                        <input type="text" name="attr_peraware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{peraware_mod}"/>
                     </div>
                 </div>
 
@@ -146,7 +148,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__wil}" name="roll_willpower" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_willpower_mod" value="0" />
-                        <input type="number" name="attr_willpower_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{willpower_mod}"/>
+                        <input type="text" name="attr_willpower_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{willpower_mod}"/>
                     </div>
                 </div>
 
@@ -164,7 +166,7 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__int}" name="roll_intelligence" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_intelligence_mod" value="0" />
-                        <input type="number" name="attr_intelligence_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{intelligence_mod}"/>
+                        <input type="text" name="attr_intelligence_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{intelligence_mod}"/>
                     </div>
                 </div>
 
@@ -185,8 +187,8 @@
                     &nbsp;⇒<button type="roll" value="@{roll-ability__soc}" name="roll_Social" ></button><br>
                     <div class="div-attrib-box__mod">
                         <input type="hidden" name="attr_social_mod" value="0" />
-                        <input type="number" name="attr_social_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{social_mod}"/>
-                        <p class="p-attr-fullcurr-label" style="margin-top: 3px; ">[ Mod ]</p>
+                        <input type="text" name="attr_social_mod_disp" class="input-number__mod-box" disabled="true" value="@{social_mod}"/>
+                        <p class="p-attr-fullcurr-label" style="margin-top: 3px; margin-left: -4px;">[ Mod ]</p>
                     </div>
                     
                 </div>
@@ -231,7 +233,44 @@
             </div>
             <div class="div__armor_ratings">
                 <img class="img-armor-ribbon" src="https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/armor_ribbon.png"/>    
+                <div class="div-armor-row1">
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_blunt" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 11px;">Blunt</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_slash" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 11px;">Slash</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_pierce" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 7px;">Pierce</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_conduct" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 2px;">Conduct</p>        
+                    </div>
+                </div>
+                <div class="div-armor-row2">
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_temp" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 9px;">Temp.</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_corrode" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 4px;">Corrode</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_sonic" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 10px;">Sonic</p>        
+                    </div>
+                    <div class="div-armor-ratetype">
+                        <input type="number" name="attr_armor_rate_deific" min="0" max="10" class="input-armor-rating" value="0" /><br />
+                        <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 11px;">Deific</p>        
+                    </div>
+                </div>
             </div>
+            
         </div>
         <div class='col'>
             <!-- Third column -->
@@ -334,6 +373,17 @@
             setAttrs({defense_rating:dr, with_shield_rating:wsr});
         });
     });
+
+    on("change:major_wound", function() {
+        getAttrs(["major_wound"], function(values) {
+            let mjw = parseInt(values.major_wound)||0;
+            let newvalue = "";
+            if (mjw==0){
+                setAttrs({maj_wound_desc:newvalue});
+            }
+        });
+    });       
+    
 </script>
 
     

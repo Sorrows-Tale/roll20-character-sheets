@@ -91,7 +91,7 @@
   font-size: 13px;
   height: 13px;
   line-height: 1;
-  padding: 0px;
+  padding: 2px;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 8px; 
@@ -99,12 +99,39 @@
   float: left;
 }
 
-
 .div-major-wound {
   float: left;
   margin-top: 6px;
   margin-left: 10px;
 }
+
+/* Hide & show major wound description */
+
+.input-cb-maj-wound { 
+  margin-top: 1px !important;
+}
+
+
+.input-text-maj-wound-desc {
+  font-family: Helvetica, Verdana, sans-serif;
+  font-size: 14px;
+  height: 18px !important;
+  width: 250px !important;
+  padding: 2px 2px 2px 2px;
+  line-height: 1;
+  font-weight:500;
+  margin-left:8px;
+  float: left;
+}
+
+.input-ctr-maj-wound-text-display[value="1"] ~ .input-text-maj-wound-desc {
+  display:block;
+}
+.input-ctr-maj-wound-text-display[value="0"] ~ .input-text-maj-wound-desc {
+  display:none;
+}
+
+
 
 .div__left {
   float:left;
@@ -138,7 +165,7 @@
 
 .div-p1col1 {
   padding: 01px;
-  width: 225px;
+  width: 200px;
   clear:left;
   float:left;
  }
@@ -147,7 +174,7 @@
   border-radius: 15px;
   background: #D3D3D3;
   padding: 10px 1px 5px 8px;
-  width: 220px;
+  width: 200px;
   height: 505px;
   margin-bottom: 5px;
 }
@@ -196,7 +223,7 @@
     border-style: double;
     border-color: #808080;
     padding: 0px;
-    width: 66px;
+    width: 42px;
     height: 32px;
     margin-top: 4px;
     margin-bottom: 0px;
@@ -227,12 +254,14 @@
     background: #FFFFFF;
     box-sizing: content-box !important;
     border-style: none;
-    margin-left: 12px; 
+    margin-left: 4px; 
+    padding-left: 0px;
+    padding-right: 0px;
     margin-top: 4px !important;
     font-family: Helvetica, Verdana, sans-serif;
     font-weight: bold;
     font-size: 18px;
-    width: 40px !important;
+    width: 30px !important;
     height: 18px !important;
     outline: none;
     text-align: center;
@@ -313,9 +342,9 @@
   border-radius: 15px;
   background: #D3D3D3;
   padding: 01px;
-  width: 598px;
+  width: 618px;
   float:left;
-  margin-left: 8px;
+  margin-left: 13px;
  }
 
 
@@ -324,7 +353,7 @@
   border-style: groove;
   background: #FFFFFF;
   width: 240px;
-  height: 170px;
+  height: 180px;
   margin: 5px 5px 4px 5px;
   float:left;
 }
@@ -369,7 +398,7 @@
 
 .div-defense-row2 {
   width: 230px;
-  padding: 5px 3px 3px 6px;
+  padding: 11px 3px 3px 6px;
   clear:both;
   display:inline-block;
   vertical-align: middle;
@@ -381,15 +410,7 @@
   outline:none;
 }
 
-.div__armor_ratings {
-  border-radius: 15px;
-  border-style: groove;
-  background: #FFFFFF;
-  width: 331px;
-  height: 170px;
-  margin: 5px 5px 4px 0px;
-  float:left;
-}
+
 
 .div-def-rate-disp {
   border-radius: 15px 15px 15px 15px;
@@ -449,14 +470,76 @@
   clear:both;
 }
 
+
+.div__armor_ratings {
+  border-radius: 15px;
+  border-style: groove;
+  background: #FFFFFF;
+  width: 350px;
+  height: 180px;
+  margin: 5px 5px 4px 0px;
+  float:left;
+}
+
 .img-armor-ribbon {
   width: 223px;
   height: 39px;
-  margin: 3px 5px 2px 50px;
+  margin: 3px 5px 0px 62px;
   clear:both;
 }
 
+.div-armor-row1 {
+  width: 345px;
+  padding: 0px 0px 10px 5px;
+  margin-top: 0px;
+  clear:both;
+  display:inline-block;
+  vertical-align: middle;
+}
 
+.div-armor-ratetype {
+  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/armor.png");
+  background-size: 55px 51px;
+  margin-left: 12px;
+  height: 51px;
+  width: 55px;
+  float:left;
+}
+
+.p-armor-rate-text {
+  font-family: Helvetica, Verdana, sans-serif;
+  font-size: 12px;
+  height: 12px;
+  line-height: 1;
+  padding: 0px;
+  margin-top: -2px;
+  margin-bottom: 0px;
+  font-weight:bold;
+  font-style: italic;
+}
+
+.input-armor-rating {
+  background-color: transparent;
+  text-align: center;
+  border-style: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: bolder;
+  padding: 0px;
+  margin-top: 9px !important;
+  margin-left: 16px;
+  height: 36px !important;
+  width: 34px !important;
+}
+
+.div-armor-row2 {
+  width: 345px;
+  padding: 8px 0px 10px 5px;
+  margin-top: 0px;
+  clear:both;
+  display:inline-block;
+  vertical-align: middle;
+}
 
 /*------------------------------------------*/
 /* Roll Template Section                    */
