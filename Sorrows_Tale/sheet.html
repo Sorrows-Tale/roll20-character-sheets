@@ -11,7 +11,7 @@
             <input type="text" class="input-text__border--trans" name="attr_character_name" maxlength="28" size="32" autocomplete="off"/>
         </div>
         <br />&nbsp;&nbsp;
-        <button type="action" name="act_page1" >Page 1</button>
+        <button type="action" name="act_page1" >Main</button>
         <button type="action" name="act_page2" >Page 2</button>
         <button type="action" name="act_page3" >Page 3</button>
     </div>
@@ -250,9 +250,9 @@
                         <input type="number" name="attr_armor_rate_conduct" min="0" max="10" class="input-armor-rating" value="0" /><br />
                         <p class="p-armor-rate-text div__left" style="padding: 9px 0px 0px 2px;">Conduct</p>        
                     </div>
-                    <div class="div-box-dam-resist">
-                        <input type="number" name="attr_armor_damage_resist" min="0" max="100" class="input-dam-resist" value="0" /><br />
-                        <p class="p-armor-dam-text div__left" style="padding: 1px 0px 0px 0px;">% Damage<br>Resistance</p>        
+                    <div class="div-box-dam-resist" name="amount">
+                        <input type="number" name="attr_armor_damage" min="0" max="10" class="input-dam-resist" value="0" /><br />
+                        <p class="p-armor-dam-text div__left" style="padding: 1px 0px 0px 6px;">&nbsp;Armor<br>Damage</p>        
                     </div>
                 </div>
                 <div class="div-armor-row2">
@@ -272,10 +272,31 @@
                         <input type="number" name="attr_armor_rate_deific" min="0" max="10" class="input-armor-rating" value="0" /><br />
                         <p class="p-armor-rate-text div__left div__left" style="padding: 9px 0px 0px 11px;">Deific</p>        
                     </div>
+                    <div class="div-box-dam-resist" name="perc">
+                        <input type="number" name="attr_armor_damage_resist" min="0" max="100" class="input-dam-resist" value="0" /><br />
+                        <p class="p-armor-dam-text div__left" style="padding: 1px 0px 0px 0px;">&nbsp;&nbsp;Damage<br>Resistance</p>        
+                    </div>
                 </div>
             </div>
-            
-        </div>
+            <div class="div-actions">
+                <div class="div-top-band">
+                    <h3 style="text-align: center;">Action Section</h3>
+                </div>
+                <div class="div-action-repeating">
+                    <fieldset class="repeating_actions">
+                        
+                       
+                            <select name="attr_action_type" class="input-action-type">
+                                <option selected>Attack</option>
+                                <option>Spell</option>
+                                <option>Action</option>
+                            </select>       
+                            <input type="text" name="attr_action_desc" value="" class="input-action-desc" placeholder="Description">
+                            <button type="roll" name="roll_action" value="/em xyz example"></button>
+                          
+                    </fieldset>
+                </div>
+            </div>
         <div class='col'>
             <!-- Third column -->
         </div>

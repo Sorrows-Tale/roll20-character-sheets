@@ -339,7 +339,7 @@
 /* page 1 column 2 section */
 
 .div-p1col2 {
-  border-radius: 15px;
+  border-radius: 15px 15px 0px 15px;
   background: #D3D3D3;
   padding: 01px;
   width: 618px;
@@ -548,9 +548,8 @@
 
 .div-box-dam-resist {
   border-radius: 15px 15px 15px 15px;
-  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/dam_resist.png");
-  background-repeat: no-repeat;
   border-style: double;
+  background: #FFFFFF;
   border-color: #808080;
   padding: 0px;
   padding-left: 0px;
@@ -560,6 +559,11 @@
   margin-bottom: 0px;
   margin-left: 12px;
   float: left;
+}
+
+.div-box-dam-resist[name="perc"] {
+  background-image: url("https://raw.githubusercontent.com/Sorrows-Tale/roll20-character-sheets/master_v0.1/Sorrows_Tale/dam_resist.png");
+  background-repeat: no-repeat;
 }
 
 .p-armor-dam-text {
@@ -583,6 +587,53 @@
   display:inline-block;
   vertical-align: middle;
 }
+
+/* page 1, column 2, 2nd row, Actions Section */
+
+.div-actions {
+  border-radius: 15px 0px 0px 15px;
+  border-style: groove;
+  background: #FFFFFF;
+  width: 602px;
+  height: 314px;
+  margin: 1px 5px 4px 5px;
+  overflow-y:scroll;
+}
+
+.div-top-band {
+  background-color: #EFEEEA;
+}
+
+
+
+.div-action-repeating {
+  width:580px;
+  clear: both;
+  float:left;
+}
+
+.input-action-desc {
+  width: 120px;
+  height: 18px !important;
+  font-size: 14px;
+  padding:0 px;
+  margin-left: 4px;
+}
+
+.input-action-type {
+  width: 63px;
+  height: 18px !important;
+  padding: 0px;
+  font-size: 14px;
+  margin-left: 4px;
+  margin-top: 1px;
+}
+
+
+
+
+
+
 
 /*------------------------------------------*/
 /* Roll Template Section                    */
