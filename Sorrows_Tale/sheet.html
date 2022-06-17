@@ -120,17 +120,17 @@
                 <div class="div-attrib-box">
                     <p class="p-attr-name">Awareness</p>
                     <div class="div-attrib-box__full">
-                        <input type="number" name="attr_peraware" min="0" max="40" class="input-number__attrib-box" />
+                        <input type="number" name="attr_aware" min="0" max="40" class="input-number__attrib-box" />
                     </div>
                     <div class="div-attrib-box__curr">
-                        <input type="number" name="attr_peraware_curr" min="0" max="40" class="input-number__attrib-box" />
+                        <input type="number" name="attr_aware_curr" min="0" max="40" class="input-number__attrib-box" />
                     </div>
                 </div>
                 <div style="float:left; margin-left:6px;">
-                    &nbsp;⇒<button type="roll" value="@{roll-ability__per}" name="roll_peraware"></button><br>
+                    &nbsp;⇒<button type="roll" value="@{roll-ability__awa}" name="roll_aware"></button><br>
                     <div class="div-attrib-box__mod">
-                        <input type="hidden" name="attr_peraware_mod" value="0" />
-                        <input type="text" name="attr_peraware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{peraware_mod}"/>
+                        <input type="hidden" name="attr_aware_mod" value="0" />
+                        <input type="text" name="attr_aware_mod_disp" min="-12" max="12" class="input-number__mod-box" disabled="true" value="@{aware_mod}"/>
                     </div>
                 </div>
 
@@ -322,8 +322,8 @@
     value="&{template:sorrowstale-ability}{{check=[[1d20+@{constitution_mod}]]}}{{charName=@{character_name}}}{{ability=Constitution}}{{mod=@{constitution_mod}}}"/>
     <input type="hidden" name="attr_roll-ability__agi" 
     value="&{template:sorrowstale-ability}{{check=[[1d20+@{agility_mod}]]}}{{charName=@{character_name}}}{{ability=Agility}}{{mod=@{agility_mod}}}"/>
-    <input type="hidden" name="attr_roll-ability__per" 
-    value="&{template:sorrowstale-ability}{{check=[[1d20+@{peraware_mod}]]}}{{charName=@{character_name}}}{{ability=Perc. Awareness}}{{mod=@{peraware_mod}}}"/>
+    <input type="hidden" name="attr_roll-ability__awa" 
+    value="&{template:sorrowstale-ability}{{check=[[1d20+@{aware_mod}]]}}{{charName=@{character_name}}}{{ability=Awareness}}{{mod=@{aware_mod}}}"/>
     <input type="hidden" name="attr_roll-ability__wil" 
     value="&{template:sorrowstale-ability}{{check=[[1d20+@{willpower_mod}]]}}{{charName=@{character_name}}}{{ability=Willpower}}{{mod=@{willpower_mod}}}"/>
     <input type="hidden" name="attr_roll-ability__int" 
@@ -371,7 +371,7 @@
     });
     
     on("change:strength change:strength_curr change:constitution change:constitution_curr change:agility change:agility_curr " +
-        "change:peraware change:peraware_curr change:willpower change:willpower_curr change:intelligence change:intelligence_curr " + 
+        "change:aware change:aware_curr change:willpower change:willpower_curr change:intelligence change:intelligence_curr " + 
         "change:social change:social_curr", function(eventInfo) {
         const attrib = eventInfo.sourceAttribute;
         getAttrs([attrib], function(values) {
