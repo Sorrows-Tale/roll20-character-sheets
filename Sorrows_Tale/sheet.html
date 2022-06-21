@@ -288,10 +288,15 @@
                        
                             <select name="attr_action_type" class="input-action-type">
                                 <option selected>Attack</option>
+                                <option>Attack</option>
                                 <option>Spell</option>
                                 <option>Action</option>
+                                <option>Effect</option>
+                                <option>Damage</option>
+                                <option>Misc</option>
                             </select>       
                             <input type="text" name="attr_action_desc" value="" class="input-action-desc" placeholder="Description">
+                            <input type="number" name="attr_action_numdice" min="1" max="10" class="input-action-numdice" value="1" /><br />
                             <button type="roll" name="roll_action" value="/em xyz example"></button>
                           
                     </fieldset>
