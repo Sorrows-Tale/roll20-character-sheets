@@ -285,7 +285,7 @@
                 <div class="div-action-repeating">
                     <fieldset class="repeating_actions">
                         
-                       
+                            <button type="roll" name="roll_action" class="input-action-roll" value="/em xyz example"></button>
                             <select name="attr_action_type" class="input-action-type">
                                 <option selected>Attack</option>
                                 <option>Attack</option>
@@ -296,9 +296,17 @@
                                 <option>Misc</option>
                             </select>       
                             <input type="text" name="attr_action_desc" value="" class="input-action-desc" placeholder="Description">
-                            <input type="number" name="attr_action_numdice" min="1" max="10" class="input-action-numdice" value="1" /><br />
-                            <button type="roll" name="roll_action" value="/em xyz example"></button>
-                          
+                            <input type="number" name="attr_action_numdice" min="1" max="10" class="input-action-numdice" value="1" title = "# Dice" />
+                            <select name="attr_action_die" class="input-action-die">
+                                <option selected>d20</option>
+                                <option>d20</option>
+                                <option>d12</option>
+                                <option>d10</option>
+                                <option>d8</option>
+                                <option>d6</option>
+                                <option>d4</option>
+                                <option>d100</option>
+                            </select>
                     </fieldset>
                 </div>
             </div>
