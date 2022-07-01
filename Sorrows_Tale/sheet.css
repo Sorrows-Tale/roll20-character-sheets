@@ -1,3 +1,17 @@
+/* remove spinners from number inputs with class nospinner */
+input[type=number].nospinner::-webkit-outer-spin-button,
+input[type=number].nospinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    text-align: center;
+}
+
+input[type=number].nospinner {
+    -moz-appearance:textfield;
+    text-align: center;
+}
+
+
 /*------------------------------------------*/
 /* Character Sheet Header Section           */
 /*------------------------------------------*/
@@ -593,61 +607,90 @@
 
 .div-top-band {
   background-color: #EFEEEA;
+  text-align: center;
 }
 
-
-
 .div-action-repeating {
-  width:580px;
-  clear: both;
-  float:left;
+  display: grid; 
+  grid-template-columns: 28px 78px 215px 28px 10px 50px 10px 30px 65px 28px;
+  grid-auto-rows: 15px;
+  column-gap: 4px;
+  width: 580px;
+  margin-top: 2px;
+}
+
+.input-action-roll {
+  padding: 1px !important;
+  margin-left: 1px;
+  width: 20px;
+  height: 18px !important;
 }
 
 .input-action-type {
-  width: 63px;
+  width: 78px;
   height: 20px !important;
   padding: 0px;
   font-size: 14px;
-  margin-left: 4px;
-  margin-top: 1px;
-  float:left;
+  margin-left: 1px;
 }
 
 .input-action-desc {
-  width: 120px;
+  width: 215px;
   height: 20px !important;
   font-size: 14px;
-  padding:0 px;
-  margin-left: 4px;
-  float:left;
+  padding: 0px;
+  margin-left: 1px;
 }
 
 .input-action-numdice {
-  width: 10px;
+  width: 25px !important;
   height: 20px !important;
   font-size: 12px;
   padding:0 px;
-  margin-left: 4px;
-  float:left;
+  margin-left: 1px;
+}
+
+.input-action-labelx {
+  width: 10px;
+  height: 20px !important;
+  padding: 0px;
+  font-size: 14px;
+}
+
+.input-action-increment {
+  width: 30px !important;
+  height: 20px !important;
+  font-size: 12px;
+  padding:0 px;
+  margin-left: 1px;
 }
 
 .input-action-die {
   width: 50px;
   height: 20px !important;
+  padding: 0px;
   font-size: 14px;
-  padding:0 px;
-  margin-left: 4px;
-  float:left;
+  margin-left: 2px;
+  
 }
 
-.input-action-roll {
-  padding:0 px;
-  margin-left: 4px;
+.input-action-d12 {
+  width: 65px;
+  height: 20px !important;
+  padding: 0px;
+  font-size: 14px;
+  margin-left: 2px;
+  
 }
 
-
-
-
+.input-action-d12bonus {
+  width: 28px !important;
+  height: 20px !important;
+  padding: 0px;
+  font-size: 14px;
+  margin-left: 2px;
+  
+}
 
 
 
@@ -666,6 +709,9 @@
   height: 165px;
   width: 245px;
 }
+
+
+
 
 .sheet-rolltemplate-sorrowstale-ability .sheet-ability-roll{
   width: 245px;
@@ -707,10 +753,6 @@
   color: #FF0000;
   border: none;
 }
-
-
-
-
 
 
   .withoutavatars .sheet-rolltemplate-sorrowstale {

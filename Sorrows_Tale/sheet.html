@@ -25,10 +25,10 @@
             </div>
         </div>    
         <div class="div__left">
-            <p class="p__font--helvetica">&nbsp;&nbsp;&nbsp;Will:</p>
+            <p class="p__font--helvetica">&nbsp;&nbsp;&nbsp;Essence:</p>
             <div class="div-bi-value-pill-box">
-                <input type="number" name="attr_will_max" min="0" max="999" class="input-number__counter" />
-                <input type="number" name="attr_will" min="-99" max="999" class="input-number__counter" style="border-left: solid 2px;"/>
+                <input type="number" name="attr_essence_max" min="0" max="999" class="input-number__counter" />
+                <input type="number" name="attr_essence" min="-99" max="999" class="input-number__counter" style="border-left: solid 2px;"/>
                 <p class="p-fullremain-label">&nbsp;&nbsp;&nbsp;Full&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current</p>
             </div>
         </div>
@@ -280,26 +280,27 @@
             </div>
             <div class="div-actions">
                 <div class="div-top-band">
-                    <h3 style="text-align: center;">Action Section</h3>
+                    <h3>Attacks / Spells / Actions</h3>
                 </div>
-                <div class="div-action-repeating">
-                    <fieldset class="repeating_actions">
-                        
-                            <button type="roll" name="roll_action" class="input-action-roll" value="/em xyz example"></button>
+                <fieldset class="repeating_actions">
+                        <div class="div-action-repeating">    
+                            <button type="roll" name="attr_action_roll" class="input-action-roll"
+                                value ="&{template:sorrowstale-attack}{{charName=@{character_name}}}{{check=[[@{action_numdice}@{action_die}+@{action_increment}]]}}{{checkd12=[[1d12+@{action_d12bonus}]]}}{{type=@{action_type}}}" >
+                            </button>
                             <select name="attr_action_type" class="input-action-type">
                                 <option selected>Attack</option>
-                                <option>Attack</option>
                                 <option>Spell</option>
                                 <option>Action</option>
                                 <option>Effect</option>
                                 <option>Damage</option>
-                                <option>Misc</option>
+                                <option>Other</option>
                             </select>       
+                            <input type="text" name="attr_action_template" hidden>
                             <input type="text" name="attr_action_desc" value="" class="input-action-desc" placeholder="Description">
-                            <input type="number" name="attr_action_numdice" min="1" max="10" class="input-action-numdice" value="1" title = "# Dice" />
+                            <input type="number" name="attr_action_numdice" min="1" max="20" class="input-action-numdice nospinner" value="1" title = "# Dice" />
+                            <input type="text" value="x" disabled class="input-action-labelx">
                             <select name="attr_action_die" class="input-action-die">
                                 <option selected>d20</option>
-                                <option>d20</option>
                                 <option>d12</option>
                                 <option>d10</option>
                                 <option>d8</option>
@@ -307,8 +308,16 @@
                                 <option>d4</option>
                                 <option>d100</option>
                             </select>
-                    </fieldset>
-                </div>
+                            <input type="text" value="+" disabled class="input-action-labelx">
+                            <input type="number" name="attr_action_increment" min="-30" max="30" class="input-action-increment nospinner" value="0" title = "Mod + Bonus" />
+                            <select name="attr_action_d12" class="input-action-d12">
+                                <option value="1" selected >☑ d12</option>
+                                <option value="0">☒ d12</option>
+                            </select>
+                            <input type="number" name="attr_action_d12bonus" min="-3" max="3" class="input-action-d12bonus nospinner" value="0" title = "d12 Bonus" />
+                            <br />
+                    </div>
+                </fieldset>
             </div>
         <div class='col'>
             <!-- Third column -->
@@ -422,6 +431,31 @@
         });
     });       
     
+   on("change:repeating_actions:action_type change:repeating_actions:action_d12 change:repeating_actions:action_d12bonus", function() {
+        getAttrs(["repeating_actions_action_d12", "repeating_actions_action_d12bonus", 
+                  "repeating_actions_action_type"], function(values) {
+            
+            var SetText = "";
+            var type = values.repeating_actions_action_type.trim();
+            
+            //set template to use        
+
+
+            // the base template call and roll
+            var setText = "&{template:sorrowstale-attack}{{charName=@{character_name}}}{{check=[[@{action_numdice}@{action_die}+@{action_increment}]]}}{{type=@{action_type}}}";
+            
+            // if action_d12 = 1 then we add a d12 roll to setText
+            if (values.repeating_actions_action_d12=="1") {
+                setText = setText + "{{checkd12=[[1d12";
+                if (values.repeating_actions_action_d12bonus.trim()!="0") {
+                    setText = setText + "+@{action_d12bonus}";
+                }
+                setText = setText + "]]}}";
+            } 
+            setAttrs({ repeating_actions_action_roll:setText});
+        });
+   });
+
 </script>
 
   
@@ -431,6 +465,23 @@
             <p style="line-height: 1.8;">&nbsp;</p>
             {{#charName}}<span style="line-height: 2.3; font-size: 12px;">{{charName}} Rolls:</span>{{/charName}}<br />
             {{#check}}<span>{{check}}</span><br />{{/check}}
+            {{#rollWasCrit() check}} <span>[ Critical Success ]</span>{{/rollWasCrit() check}}
+            {{#rollWasFumble() check}}<span>[ Fail / Fumble ]</span>{{/rollWasFumble() check}}
+         </div>
+        <div class="sheet-ability-roll-footer">
+            {{#ability}}<span class="sheet-ability-font">{{ability}} </span>{{/ability}}
+            {{#mod}}<span class="sheet-ability-font"> ({{mod}}) </span>{{/mod}}
+        </div>
+    </div>       
+ </rolltemplate>
+
+ <rolltemplate class="sheet-rolltemplate-sorrowstale-attack">
+    <div class="sheet-container">
+        <div class="sheet-ability-roll">
+            <p style="line-height: 1.8;">&nbsp;</p>
+            {{#charName}}<span style="line-height: 2.3; font-size: 12px;">{{charName}} Rolls:</span>{{/charName}}<br />
+            {{#check}}<span>{{check}}</span><br />{{/check}}
+            {{#checkd12}}<span>{{checkd12}}</span><br />{{/checkd12}}
             {{#rollWasCrit() check}} <span>[ Critical Success ]</span>{{/rollWasCrit() check}}
             {{#rollWasFumble() check}}<span>[ Fail / Fumble ]</span>{{/rollWasFumble() check}}
          </div>
